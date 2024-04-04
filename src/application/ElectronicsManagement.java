@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import framework.CommandUserInterface;
 import framework.Computer;
 import framework.Electronics;
 import framework.Phone;
@@ -16,6 +17,7 @@ public class ElectronicsManagement {
 		boolean keepRunning = true;
 
 		while (keepRunning) {
+			CommandUserInterface.clearConsole(); // 清除控制台屏幕
 			System.out.println("请选择要进行的操作（输入'c'创建计算机，输入'p'创建手机，输入'q'退出）：");
 			String input = scanner.next();
 
