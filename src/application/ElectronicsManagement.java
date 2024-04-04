@@ -1,15 +1,8 @@
 package application;
 
-import java.util.*;
-import java.util.StringTokenizer;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
-import framework.CommandUserInterface;
-import framework.Computer;
-import framework.Electronics;
-import framework.Phone;
+import framework.*;
 
 public class ElectronicsManagement {
 	public static void main(String[] args) {
@@ -22,46 +15,16 @@ public class ElectronicsManagement {
 			String input = scanner.next();
 
 			if (input.equals("c")) {
-				// 从用户处读取 Computer 信息
-				System.out.println("请输入 Computer 的重量:");
-				double computerWeight = scanner.nextDouble();
-				System.out.println("请输入 Computer 的价格:");
-				double computerPrice = scanner.nextDouble();
-				System.out.println("请输入 Computer 的耗电量:");
-				double computerPowerConsumption = scanner.nextDouble();
-				System.out.println("请输入 Computer 的制造商:");
-				String computerManufacturer = scanner.next();
-				System.out.println("请输入 Computer 的内存:");
-				String computerMemory = scanner.next();
-				System.out.println("请输入 Computer 的 CPU 型号:");
-				String computerCpu = scanner.next();
-
 				// 创建 Computer 对象
-				Computer computer = new Computer(computerWeight, computerPrice, computerPowerConsumption,
-						computerManufacturer, computerMemory, computerCpu);
+				Computer computer = Commander.createComputerCommand.execute(scanner);
 
 				// 输出 Computer 信息
 				System.out.println("\nComputer Information:");
 				computer.displayInfo();
 
 			} else if (input.equals("p")) {
-				// 从用户处读取 Phone 信息
-				System.out.println("\n请输入 Phone 的重量:");
-				double phoneWeight = scanner.nextDouble();
-				System.out.println("请输入 Phone 的价格:");
-				double phonePrice = scanner.nextDouble();
-				System.out.println("请输入 Phone 的耗电量:");
-				double phonePowerConsumption = scanner.nextDouble();
-				System.out.println("请输入 Phone 的制造商:");
-				String phoneManufacturer = scanner.next();
-				System.out.println("请输入 Phone 的系统:");
-				String phoneSystem = scanner.next();
-				System.out.println("请输入 Phone 的存储空间:");
-				int phoneStorage = scanner.nextInt();
-
 				// 创建 Phone 对象
-				Phone phone = new Phone(phoneWeight, phonePrice, phonePowerConsumption, phoneManufacturer, phoneSystem,
-						phoneStorage);
+				Phone phone = Commander.createPhoneCommand.execute(scanner);
 
 				// 输出 Phone 信息
 				System.out.println("\nPhone Information:");
