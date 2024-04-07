@@ -1,37 +1,43 @@
 package framework;
+
+// Phone class representing a mobile phone
 public class Phone extends Electronics {  
-    private String os; // 系统  
-    private int storageCapacity; // 存储空间  
+    // Instance variables
+    private String os; // 存储操作系统
+    private int storageCapacity; // 存储存储空间
   
-    // 构造方法  
+    // Constructor
     public Phone(double weight, double price, double powerConsumption, String manufacturer, String os, int storageCapacity) {  
-        super(weight, price, powerConsumption, manufacturer);  
-        this.os = os;  
-        this.storageCapacity = storageCapacity;  
+        super(weight, price, powerConsumption, manufacturer);  // 调用父类构造方法
+        this.os = os;  // 初始化操作系统
+        this.storageCapacity = storageCapacity;  // 初始化存储空间
     }  
   
-    // Getter 和 Setter 方法  
+    // Getter method for os
     public String getOs() {  
         return os;  
     }  
   
+    // Setter method for os
     public void setOs(String os) {  
         this.os = os;  
     }  
   
+    // Getter method for storageCapacity
     public int getStorageCapacity() {  
         return storageCapacity;  
     }  
   
+    // Setter method for storageCapacity
     public void setStorageCapacity(int storageCapacity) {  
         this.storageCapacity = storageCapacity;  
     }  
   
-    // 覆盖父类的输出设备信息的方法，增加手机特有的属性  
+    // Method to override the parent class's displayInfo method, adding phone-specific attributes
     @Override  
     public void displayInfo() {  
-        super.displayInfo();  
-        System.out.println("Operating System: " + os);  
-        System.out.println("Storage Capacity: " + storageCapacity + " GB");  
+        super.displayInfo();  // 调用父类的displayInfo方法
+        System.out.println("Operating System: " + os);  // 显示操作系统
+        System.out.println("Storage Capacity: " + storageCapacity + " GB");  // 显示存储空间
     }  
 }
